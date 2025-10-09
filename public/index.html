@@ -110,13 +110,53 @@
       background: radial-gradient(120px 8px at 50% 50%, rgba(34,211,238,.6), transparent 70%);
       filter: blur(.2px);
     }
+    
+    /* Enhanced professional elements */
+    .expertise-badge {
+      background: linear-gradient(135deg, rgba(34,211,238,0.15) 0%, rgba(96,165,250,0.15) 100%);
+      border: 1px solid rgba(34,211,238,0.3);
+      backdrop-filter: blur(10px);
+    }
+    
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(34,211,238,0.5) 50%, transparent 100%);
+      margin: 4rem 0;
+    }
+    
+    .turnkey-badge {
+      background: linear-gradient(135deg, rgba(34,211,238,0.2) 0%, rgba(34,211,238,0.05) 100%);
+      border-left: 4px solid #22d3ee;
+    }
+    
+    .process-step {
+      counter-increment: step-counter;
+      position: relative;
+    }
+    
+    .process-step::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: -2.5rem;
+      top: 0;
+      width: 2rem;
+      height: 2rem;
+      background: #22d3ee;
+      color: #0b1020;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-family: 'Poppins', sans-serif;
+    }
   </style>
 </head>
 
 <body class="bg-dark text-slate-200 font-sans">
 
   <!-- Navbar -->
-  <header class="sticky top-0 z-50 bg-slateDeep/70 backdrop-blur-xl border-b border-white/10">
+  <header class="sticky top-0 z-50 bg-slateDeep/90 backdrop-blur-xl border-b border-white/10">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="#home" class="flex items-center gap-3 group">
         <img src="logo.png" alt="FABRICRAFT Logo" class="h-8 w-auto brightness-200 contrast-125 saturate-150" />
@@ -129,6 +169,7 @@
       <nav class="hidden md:flex items-center gap-8 text-sm">
         <a href="#home" class="text-slate-300 hover:text-primary transition">Home</a>
         <a href="#services" class="text-slate-300 hover:text-primary transition">Services</a>
+        <a href="#expertise" class="text-slate-300 hover:text-primary transition">Expertise</a>
         <a href="#about" class="text-slate-300 hover:text-primary transition">About Us</a>
         <a href="#projects" class="text-slate-300 hover:text-primary transition">Projects</a>
         <a href="#contact" class="text-slate-300 hover:text-primary transition">Contact</a>
@@ -145,6 +186,7 @@
       <div class="glass rounded-xl p-2">
         <a href="#home" class="block px-4 py-3 hover:bg-white/5 rounded-lg transition">Home</a>
         <a href="#services" class="block px-4 py-3 hover:bg-white/5 rounded-lg transition">Services</a>
+        <a href="#expertise" class="block px-4 py-3 hover:bg-white/5 rounded-lg transition">Expertise</a>
         <a href="#about" class="block px-4 py-3 hover:bg-white/5 rounded-lg transition">About Us</a>
         <a href="#projects" class="block px-4 py-3 hover:bg-white/5 rounded-lg transition">Projects</a>
         <a href="#contact" class="block px-4 py-3 hover:bg-white/5 rounded-lg transition">Contact</a>
@@ -164,12 +206,24 @@
 
       <div class="relative w-full">
         <div class="max-w-7xl mx-auto px-6 py-20 sm:py-24 lg:py-28 text-center">
+          <div class="reveal inline-block expertise-badge px-4 py-2 rounded-full mb-6">
+            <span class="text-sm font-medium text-primary">Experts in Structural & Industrial Fabrication</span>
+          </div>
+          
           <h1 class="reveal font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] text-white drop-shadow-glow">
             Precision <span class="text-primary">Metal &amp; Glass</span> Fabrication
           </h1>
+          
           <p class="reveal mt-6 text-lg sm:text-xl max-w-3xl mx-auto text-slate-300">
             Transforming visions into reality with exceptional craftsmanship, cutting-edge technology, and unwavering commitment to quality that exceeds industry standards.
           </p>
+          
+          <div class="reveal mt-8 max-w-4xl mx-auto">
+            <div class="turnkey-badge p-4 rounded-lg text-left">
+              <h3 class="font-heading text-lg font-semibold text-white mb-2">Complete Turnkey Solutions</h3>
+              <p class="text-slate-300 text-sm">From concept to completion, we deliver end-to-end fabrication services for structural and industrial applications with precision engineering and quality assurance.</p>
+            </div>
+          </div>
 
           <div class="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#contact"
@@ -249,12 +303,98 @@
       </div>
     </section>
 
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-20 px-6 bg-[#0b1020]">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="reveal font-heading text-3xl sm:text-5xl font-bold text-white">Our Core Expertise</h2>
+          <p class="reveal mt-4 text-slate-400 max-w-2xl mx-auto">Specialized fabrication solutions for structural and industrial applications with complete project management.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Structural Fabrication -->
+          <div class="reveal glass border border-white/10 rounded-xl overflow-hidden card-hover">
+            <img src="f1.jpeg" alt="Structural Fabrication" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/800x420/0b1020/ffffff?text=Structural+Fabrication'">
+            <div class="p-6">
+              <div class="w-14 h-14 rounded-full grid place-items-center bg-primary/15 text-primary mb-4">
+                <i class="fa-solid fa-building text-xl"></i>
+              </div>
+              <h3 class="font-heading text-2xl font-semibold text-white">Structural Fabrication</h3>
+              <p class="mt-2 text-slate-400">Expert fabrication of structural steel components for buildings, bridges, and industrial facilities with precision engineering and quality assurance.</p>
+              <ul class="mt-3 text-sm text-slate-400 space-y-1">
+                <li><i class="fa-solid fa-check text-primary mr-2"></i>Beams, columns, and truss systems</li>
+                <li><i class="fa-solid fa-check text-primary mr-2"></i>Custom structural frameworks</li>
+                <li><i class="fa-solid fa-check text-primary mr-2"></i>Industrial support structures</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Industrial Fabrication -->
+          <div class="reveal glass border border-white/10 rounded-xl overflow-hidden card-hover">
+            <img src="f2.jpeg" alt="Industrial Fabrication" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/800x420/0b1020/ffffff?text=Industrial+Fabrication'">
+            <div class="p-6">
+              <div class="w-14 h-14 rounded-full grid place-items-center bg-primary/15 text-primary mb-4">
+                <i class="fa-solid fa-industry text-xl"></i>
+              </div>
+              <h3 class="font-heading text-2xl font-semibold text-white">Industrial Fabrication</h3>
+              <p class="mt-2 text-slate-400">Custom fabrication solutions for industrial applications including machinery components, processing equipment, and specialized industrial systems.</p>
+              <ul class="mt-3 text-sm text-slate-400 space-y-1">
+                <li><i class="fa-solid fa-check text-primary mr-2"></i>Machinery frames and enclosures</li>
+                <li><i class="fa-solid fa-check text-primary mr-2"></i>Processing equipment components</li>
+                <li><i class="fa-solid fa-check text-primary mr-2"></i>Custom industrial solutions</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Turnkey Solutions -->
+          <div class="reveal glass border border-white/10 rounded-xl overflow-hidden card-hover">
+            <img src="f3.jpeg" alt="Turnkey Solutions" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/800x420/0b1020/ffffff?text=Turnkey+Solutions'">
+            <div class="p-6">
+              <div class="w-14 h-14 rounded-full grid place-items-center bg-primary/15 text-primary mb-4">
+                <i class="fa-solid fa-screwdriver-wrench text-xl"></i>
+              </div>
+              <h3 class="font-heading text-2xl font-semibold text-white">Turnkey Solutions</h3>
+              <p class="mt-2 text-slate-400">End-to-end project execution from design and engineering to fabrication, installation, and commissioning with single-point responsibility.</p>
+              <ul class="mt-3 text-sm text-slate-400 space-y-1">
+                <li><i class="fa-solid fa-check text-primary mr-2"></i>Complete project management</li>
+                <li><i class="fa-solid fa-check text-primary mr-2"></i>Design-to-installation services</li>
+                <li><i class="fa-solid fa-check text-primary mr-2"></i>Quality assurance at every stage</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Process -->
+        <div class="reveal mt-16">
+          <h3 class="font-heading text-3xl font-bold text-white text-center mb-12">Our Process</h3>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="process-step p-6">
+              <h4 class="font-heading text-xl font-semibold text-white mb-3">Consultation & Design</h4>
+              <p class="text-slate-400">Understanding client requirements and creating detailed design specifications.</p>
+            </div>
+            <div class="process-step p-6">
+              <h4 class="font-heading text-xl font-semibold text-white mb-3">Engineering & Planning</h4>
+              <p class="text-slate-400">Technical engineering, material selection, and project planning with precision.</p>
+            </div>
+            <div class="process-step p-6">
+              <h4 class="font-heading text-xl font-semibold text-white mb-3">Fabrication & Quality Control</h4>
+              <p class="text-slate-400">Precision fabrication with rigorous quality checks at every production stage.</p>
+            </div>
+            <div class="process-step p-6">
+              <h4 class="font-heading text-xl font-semibold text-white mb-3">Installation & Support</h4>
+              <p class="text-slate-400">Professional installation and comprehensive after-sales support services.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Services -->
-    <section id="services" class="py-20 px-6 bg-[#0b1020]">
+    <section id="services" class="py-20 px-6 bg-[#0c1428]">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-12">
           <h2 class="reveal font-heading text-3xl sm:text-5xl font-bold text-white">Our Premium Services</h2>
-          <p class="reveal mt-4 text-slate-400 max-w-2xl mx-auto">We specialize in high-quality fabrication services for commercial and residential projects.</p>
+          <p class="reveal mt-4 text-slate-400 max-w-2xl mx-auto">We specialize in high-quality fabrication services for commercial, industrial and residential projects.</p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -398,7 +538,7 @@
     </section>
 
     <!-- About -->
-    <section id="about" class="py-20 px-6 bg-[#0c1428]">
+    <section id="about" class="py-20 px-6 bg-[#0b1020]">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div class="reveal">
           <h2 class="font-heading text-3xl sm:text-5xl font-bold text-white">About FABRICRAFT ENGINEERING</h2>
@@ -426,6 +566,7 @@
               <li><i class="fa-solid fa-check-circle text-primary mr-2"></i>Skilled and certified technicians</li>
               <li><i class="fa-solid fa-check-circle text-primary mr-2"></i>Competitive pricing with no hidden costs</li>
               <li><i class="fa-solid fa-check-circle text-primary mr-2"></i>Comprehensive after-sales support</li>
+              <li><i class="fa-solid fa-check-circle text-primary mr-2"></i>Turnkey solutions for complex projects</li>
             </ul>
           </div>
         </div>
@@ -433,7 +574,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-20 px-6 bg-[#0b1020]">
+    <section id="contact" class="py-20 px-6 bg-[#0c1428]">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-12">
           <h2 class="reveal font-heading text-3xl sm:text-5xl font-bold text-white">Get in Touch</h2>
@@ -468,6 +609,9 @@
                     <option value="peb-structures">PEB Structures</option>
                     <option value="custom-fabrication">Custom Fabrication</option>
                     <option value="prefab">Prefab Structures</option>
+                    <option value="structural">Structural Fabrication</option>
+                    <option value="industrial">Industrial Fabrication</option>
+                    <option value="turnkey">Turnkey Solutions</option>
                     <option value="all-fabrication">All Types of Fabrication</option>
                   </select>
                 </div>
@@ -519,8 +663,8 @@
                   <div class="bg-primary/15 text-primary p-3 rounded-xl"><i class="fa-solid fa-clock text-xl"></i></div>
                   <div>
                     <h4 class="font-medium text-white mb-1">Business Hours</h4>
-                    <p class="text-slate-400">Monday - Friday: 8:00 AM - 6:00 PM</p>
-                    <p class="text-slate-400">Saturday: 9:00 AM - 2:00 PM</p>
+                    <p class="text-slate-400">Monday - Friday: 10:00 AM - 6:00 PM</p>
+                    <p class="text-slate-400">Saturday: 10:00 AM - 2:00 PM</p>
                     <p class="text-slate-400">Sunday: Closed</p>
                   </div>
                 </div>
@@ -544,7 +688,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-[#0c1428]">
+  <footer class="bg-[#0b1020]">
     <div class="divider-glow"></div>
     <div class="max-w-7xl mx-auto px-6 py-12">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
@@ -567,6 +711,7 @@
           <ul class="space-y-2 text-slate-400">
             <li><a href="#home" class="hover:text-primary transition">Home</a></li>
             <li><a href="#services" class="hover:text-primary transition">Services</a></li>
+            <li><a href="#expertise" class="hover:text-primary transition">Expertise</a></li>
             <li><a href="#about" class="hover:text-primary transition">About Us</a></li>
             <li><a href="#contact" class="hover:text-primary transition">Contact</a></li>
           </ul>
@@ -578,7 +723,9 @@
             <li><a href="#services" class="hover:text-primary transition">SS & Glass Railings</a></li>
             <li><a href="#services" class="hover:text-primary transition">ACP Paneling</a></li>
             <li><a href="#services" class="hover:text-primary transition">PEB & Prefab</a></li>
-            <li><a href="#services" class="hover:text-primary transition">Custom & All Fabrication</a></li>
+            <li><a href="#expertise" class="hover:text-primary transition">Structural Fabrication</a></li>
+            <li><a href="#expertise" class="hover:text-primary transition">Industrial Fabrication</a></li>
+            <li><a href="#expertise" class="hover:text-primary transition">Turnkey Solutions</a></li>
           </ul>
         </div>
 
