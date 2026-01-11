@@ -1016,44 +1016,41 @@
                 <!-- Contact Form -->
                 <div class="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-xl">
                     <h3 class="font-montserrat font-bold text-xl md:text-2xl mb-6">Send us a Message</h3>
-                    <form id="contactForm" class="space-y-4 md:space-y-6">
-                        <div class="grid md:grid-cols-2 gap-4 md:gap-6">
-                            <div>
-                                <label class="block text-steel font-medium mb-2 text-sm md:text-base">Full Name *</label>
-                                <input type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition text-sm md:text-base">
-                            </div>
-                            <div>
-                                <label class="block text-steel font-medium mb-2 text-sm md:text-base">Phone Number *</label>
-                                <input type="tel" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition text-sm md:text-base">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-steel font-medium mb-2 text-sm md:text-base">Email Address *</label>
-                            <input type="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition text-sm md:text-base">
-                        </div>
-                        <div>
-                            <label class="block text-steel font-medium mb-2 text-sm md:text-base">Project Type</label>
-                            <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition text-sm md:text-base">
-                                <option value="">Select Project Type</option>
-                                <option value="warehouse">Warehouse/Storage</option>
-                                <option value="factory">Factory/Manufacturing</option>
-                                <option value="commercial">Commercial Building</option>
-                                <option value="institutional">School/Hospital</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-steel font-medium mb-2 text-sm md:text-base">Approximate Area (sq.ft)</label>
-                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition text-sm md:text-base">
-                        </div>
-                        <div>
-                            <label class="block text-steel font-medium mb-2 text-sm md:text-base">Message</label>
-                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition text-sm md:text-base"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-primary text-white py-3 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-dark-blue transition duration-300">
-                            <i class="fas fa-paper-plane mr-2"></i>Send Message
-                        </button>
-                    </form>
+
+                    <!-- QR Contact Section -->
+        <div class="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-xl text-center">
+            
+            <h3 class="font-montserrat font-bold text-xl md:text-2xl mb-4">
+                Scan to Contact Us
+            </h3>
+
+            <p class="text-steel mb-6 text-sm md:text-base">
+                Scan the QR code below to open our contact form and submit your project details.
+            </p>
+
+            <div class="flex justify-center mb-6">
+                <img 
+                    src="contact-qr.png" 
+                    alt="FABRICRAFT Contact QR Code"
+                    class="w-48 h-48 md:w-56 md:h-56 shadow-lg rounded-lg"
+                >
+            </div>
+
+            <p class="text-sm text-gray-600 mb-4">
+                📱 Best viewed on mobile after scanning
+            </p>
+
+            <!-- Optional Button for Desktop Users -->
+            <a 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdf5FzWzLDv9PjovSmodOdDiZVZr4-9OfHg4CphnvZTGFrOgQ/viewform"
+            target="_blank"
+            class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-dark-blue transition"
+            >
+            Open Form in Browser
+           </a>
+
+           </div>
+
                 </div>
 
                 <!-- Contact Information -->
