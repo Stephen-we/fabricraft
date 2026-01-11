@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FABRICRAFT PEB Solutions | Turnkey Pre-Engineered Buildings & Steel Structures</title>
-    <meta name="description" content="FABRICRAFT offers premium Pre-Engineered Building (PEB) turnkey solutions, industrial sheds, and steel fabrication services. Fast, cost-effective construction across India.">
-    <meta name="keywords" content="PEB, Pre-Engineered Buildings, Steel Structures, Industrial Sheds, Turnkey Solutions, Warehouse Construction, PEB Manufacturers India">
+    <title>FABRICRAFT | PEB Solutions & Industrial Equipment Manufacturing</title>
+    <meta name="description" content="FABRICRAFT offers PEB turnkey solutions, industrial equipment manufacturing, and commissioning services. Complete engineering solutions for industrial projects across India.">
+    <meta name="keywords" content="PEB, Pre-Engineered Buildings, Industrial Equipment Manufacturing, Commissioning Services, Steel Structures, Turnkey Solutions, Industrial Sheds">
     <meta name="author" content="FABRICRAFT Engineering">
     
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="FABRICRAFT PEB Solutions | Turnkey Pre-Engineered Buildings">
-    <meta property="og:description" content="Premium PEB turnkey solutions for industrial, commercial & institutional projects across India.">
+    <meta property="og:title" content="FABRICRAFT | PEB Solutions & Industrial Equipment Manufacturing">
+    <meta property="og:description" content="Premium PEB turnkey solutions and industrial equipment manufacturing & commissioning services across India.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="logo.png">
     
@@ -33,6 +33,7 @@
                         steel: '#334155',
                         'light-blue': '#E3F2FD',
                         'dark-blue': '#003366',
+                        'industrial': '#FF9800',
                     },
                     fontFamily: {
                         'montserrat': ['Montserrat', 'sans-serif'],
@@ -57,6 +58,9 @@
                             '0%': { opacity: '0' },
                             '100%': { opacity: '1' },
                         }
+                    },
+                    screens: {
+                        'xs': '475px',
                     }
                 }
             }
@@ -150,11 +154,19 @@
             border-radius: 2px;
         }
         
+        .industrial-divider {
+            height: 4px;
+            width: 80px;
+            background: linear-gradient(90deg, #FF9800, #FF6B35);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+        
         /* Back to Top Button */
         #backToTop {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 20px;
+            right: 20px;
             z-index: 999;
             width: 50px;
             height: 50px;
@@ -173,15 +185,6 @@
         #backToTop:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 82, 204, 0.4);
-        }
-        
-        /* Responsive Table */
-        @media (max-width: 768px) {
-            .responsive-table {
-                display: block;
-                overflow-x: auto;
-                white-space: nowrap;
-            }
         }
         
         /* Image Gallery Hover Effects */
@@ -247,21 +250,6 @@
             color: #FF6B35;
         }
         
-        /* Loading Animation */
-        .loading-spinner {
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #0052CC;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
         /* Ensure videos have black background and are visible */
         .video-wrapper {
             background: #000;
@@ -298,12 +286,154 @@
             bottom: -50px;
             left: -50px;
         }
+        
+        /* Industrial Services Background */
+        .industrial-bg {
+            background: linear-gradient(135deg, rgba(255, 152, 0, 0.1) 0%, rgba(255, 255, 255, 1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .industrial-bg::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 152, 0, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%);
+            top: -100px;
+            right: -100px;
+        }
+        
+        .industrial-bg::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 152, 0, 0.05) 100%);
+            bottom: -50px;
+            left: -50px;
+        }
+        
+        /* Service Tabs */
+        .service-tab {
+            transition: all 0.3s ease;
+        }
+        
+        .service-tab.active {
+            background: linear-gradient(135deg, #0052CC, #00A8FF);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .industrial-tab.active {
+            background: linear-gradient(135deg, #FF9800, #FF6B35);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .service-content.active {
+            display: block;
+        }
+        
+        /* Industrial Equipment Cards */
+        .equipment-card {
+            border-left: 4px solid #FF9800;
+            transition: all 0.3s ease;
+        }
+        
+        .equipment-card:hover {
+            border-left: 4px solid #FF6B35;
+            transform: translateX(5px);
+        }
+        
+        /* Mobile Optimization */
+        @media (max-width: 640px) {
+            .hero-bg::before,
+            .hero-bg::after,
+            .industrial-bg::before,
+            .industrial-bg::after {
+                display: none;
+            }
+            
+            .section-divider,
+            .industrial-divider {
+                width: 60px;
+                height: 3px;
+            }
+            
+            .gallery-item:hover {
+                transform: none;
+            }
+            
+            .card-hover:hover {
+                transform: none;
+            }
+            
+            /* Better touch targets */
+            button, 
+            a {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            /* Improve text readability */
+            p, li {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+        }
+        
+        /* Tablet Optimization */
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            /* Stack columns on mobile */
+            .mobile-stack {
+                flex-direction: column;
+            }
+            
+            /* Adjust spacing for mobile */
+            .mobile-spacing {
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        /* Image optimization */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Better mobile navigation */
+        @media (max-width: 1024px) {
+            .desktop-only {
+                display: none;
+            }
+        }
+        
+        /* Fix for iOS Safari */
+        @supports (-webkit-touch-callout: none) {
+            .hero-bg,
+            .industrial-bg {
+                background-attachment: scroll;
+            }
+        }
     </style>
 </head>
 <body class="font-poppins text-gray-800 bg-white">
 
     <!-- Back to Top Button -->
-    <button id="backToTop">
+    <button id="backToTop" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
     </button>
 
@@ -316,16 +446,16 @@
                     <img src="logo.png" alt="FABRICRAFT Logo" class="h-8 md:h-12 w-auto">
                     <div>
                         <h1 class="font-montserrat font-bold text-lg md:text-2xl text-primary">FABRICRAFT</h1>
-                        <p class="text-xs text-steel font-medium hidden md:block">PEB SOLUTIONS</p>
+                        <p class="text-xs text-steel font-medium hidden md:block">PEB & INDUSTRIAL SOLUTIONS</p>
                     </div>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center space-x-6 md:space-x-8">
                     <a href="#home" class="font-medium text-steel hover:text-primary transition text-sm md:text-base">Home</a>
-                    <a href="#about" class="font-medium text-steel hover:text-primary transition text-sm md:text-base">About PEB</a>
-                    <a href="#advantages" class="font-medium text-steel hover:text-primary transition text-sm md:text-base">Advantages</a>
-                    <a href="#turnkey" class="font-medium text-steel hover:text-primary transition text-sm md:text-base">Turnkey</a>
+                    <a href="#services" class="font-medium text-steel hover:text-primary transition text-sm md:text-base">Our Services</a>
+                    <a href="#peb" class="font-medium text-steel hover:text-primary transition text-sm md:text-base">PEB Solutions</a>
+                    <a href="#industrial" class="font-medium text-steel hover:text-industrial transition text-sm md:text-base">Industrial Equipment</a>
                     <a href="#gallery" class="font-medium text-steel hover:text-primary transition text-sm md:text-base">Gallery</a>
                     <a href="#videos" class="font-medium text-steel hover:text-primary transition text-sm md:text-base">Videos</a>
                     <a href="#contact" class="bg-primary text-white px-4 md:px-6 py-2 rounded-lg font-semibold hover:bg-dark-blue transition text-sm md:text-base">
@@ -334,7 +464,7 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="lg:hidden text-steel text-2xl">
+                <button id="mobileMenuBtn" class="lg:hidden text-steel text-2xl p-2" aria-label="Toggle mobile menu">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -342,13 +472,13 @@
             <!-- Mobile Menu -->
             <div id="mobileMenu" class="mobile-menu lg:hidden">
                 <div class="flex flex-col space-y-3 pt-4">
-                    <a href="#home" class="font-medium text-steel hover:text-primary transition py-2 border-b border-gray-100">Home</a>
-                    <a href="#about" class="font-medium text-steel hover:text-primary transition py-2 border-b border-gray-100">About PEB</a>
-                    <a href="#advantages" class="font-medium text-steel hover:text-primary transition py-2 border-b border-gray-100">Advantages</a>
-                    <a href="#turnkey" class="font-medium text-steel hover:text-primary transition py-2 border-b border-gray-100">Turnkey Solutions</a>
-                    <a href="#gallery" class="font-medium text-steel hover:text-primary transition py-2 border-b border-gray-100">Gallery</a>
-                    <a href="#videos" class="font-medium text-steel hover:text-primary transition py-2 border-b border-gray-100">Videos</a>
-                    <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-dark-blue transition mt-2">
+                    <a href="#home" class="font-medium text-steel hover:text-primary transition py-3 px-4 border-b border-gray-100">Home</a>
+                    <a href="#services" class="font-medium text-steel hover:text-primary transition py-3 px-4 border-b border-gray-100">Our Services</a>
+                    <a href="#peb" class="font-medium text-steel hover:text-primary transition py-3 px-4 border-b border-gray-100">PEB Solutions</a>
+                    <a href="#industrial" class="font-medium text-steel hover:text-industrial transition py-3 px-4 border-b border-gray-100">Industrial Equipment</a>
+                    <a href="#gallery" class="font-medium text-steel hover:text-primary transition py-3 px-4 border-b border-gray-100">Gallery</a>
+                    <a href="#videos" class="font-medium text-steel hover:text-primary transition py-3 px-4 border-b border-gray-100">Videos</a>
+                    <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-dark-blue transition mt-2 mx-4">
                         <i class="fas fa-phone-alt mr-2"></i>Get Quote
                     </a>
                 </div>
@@ -363,15 +493,15 @@
                 <!-- Hero Content -->
                 <div>
                     <div class="inline-flex items-center bg-primary/10 text-primary px-3 md:px-4 py-1 md:py-2 rounded-full text-xs md:text-sm font-semibold mb-4 md:mb-6">
-                        <i class="fas fa-star mr-2"></i> PREMIUM PEB TURNKEY SOLUTIONS
+                        <i class="fas fa-star mr-2"></i> COMPLETE INDUSTRIAL SOLUTIONS
                     </div>
                     <h1 class="font-montserrat font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 md:mb-6">
-                        <span class="gradient-text">Pre-Engineered</span><br class="hidden md:block">
-                        <span class="text-primary">Building Excellence</span>
+                        <span class="gradient-text">PEB & Industrial</span><br class="hidden md:block">
+                        <span class="text-primary">Equipment Solutions</span>
                     </h1>
                     <p class="text-base md:text-lg text-steel mb-6 md:mb-8 leading-relaxed">
-                        Complete turnkey PEB solutions. <strong>60% faster</strong> construction at 
-                        <strong>30% lower cost</strong> than conventional methods.
+                        Complete turnkey PEB solutions <strong>60% faster</strong> at 
+                        <strong>30% lower cost</strong> + Industrial equipment manufacturing, installation & commissioning services.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-3 md:gap-4 mb-8 md:mb-12">
                         <a href="#contact" class="bg-primary text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-dark-blue transition duration-300 text-center">
@@ -397,8 +527,8 @@
                             <div class="text-xs md:text-sm text-steel">Cost Saving</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-2xl md:text-3xl font-bold text-primary counter" data-count="100">100%</div>
-                            <div class="text-xs md:text-sm text-steel">Satisfaction</div>
+                            <div class="text-2xl md:text-3xl font-bold text-industrial counter" data-count="100">100+</div>
+                            <div class="text-xs md:text-sm text-steel">Equipment Built</div>
                         </div>
                     </div>
                 </div>
@@ -408,8 +538,8 @@
                     <div class="relative rounded-xl md:rounded-2xl overflow-hidden shadow-2xl">
                         <img src="3d1.jpg" alt="PEB 3D Structure" class="w-full h-auto">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 md:p-6">
-                            <h3 class="text-white font-bold text-lg md:text-xl">Complete Turnkey Solutions</h3>
-                            <p class="text-white/90 text-sm md:text-base">Design • Fabrication • Erection • Finishing</p>
+                            <h3 class="text-white font-bold text-lg md:text-xl">Complete Industrial Solutions</h3>
+                            <p class="text-white/90 text-sm md:text-base">PEB • Equipment • Commissioning</p>
                         </div>
                     </div>
                 </div>
@@ -417,22 +547,175 @@
         </div>
     </section>
 
-    <!-- About PEB Section -->
-    <section id="about" class="py-12 md:py-16 lg:py-24 bg-gray-50">
+    <!-- Services Overview Section -->
+    <section id="services" class="py-12 md:py-16 lg:py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 md:mb-16">
+            <div class="text-center mb-8 md:mb-12">
                 <h2 class="font-montserrat font-bold text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4">
-                    What Are <span class="text-primary">Pre-Engineered Buildings</span>?
+                    Our <span class="text-primary">Services</span>
                 </h2>
                 <div class="section-divider"></div>
-                <p class="text-base md:text-lg text-steel max-w-3xl mx-auto">
+                <p class="text-base md:text-lg text-steel max-w-3xl mx-auto px-4">
+                    Comprehensive industrial solutions from building construction to equipment manufacturing and commissioning
+                </p>
+            </div>
+
+            <!-- Service Tabs -->
+            <div class="flex flex-col xs:flex-row gap-2 xs:gap-4 mb-8 md:mb-12 overflow-x-auto pb-2">
+                <button class="service-tab active py-3 px-4 md:px-6 rounded-lg bg-primary text-white font-semibold text-sm md:text-base whitespace-nowrap" data-service="peb">
+                    <i class="fas fa-building mr-2"></i> PEB Solutions
+                </button>
+                <button class="service-tab py-3 px-4 md:px-6 rounded-lg bg-gray-200 text-steel font-semibold text-sm md:text-base whitespace-nowrap" data-service="equipment">
+                    <i class="fas fa-industry mr-2"></i> Equipment Manufacturing
+                </button>
+                <button class="service-tab py-3 px-4 md:px-6 rounded-lg bg-gray-200 text-steel font-semibold text-sm md:text-base whitespace-nowrap" data-service="commissioning">
+                    <i class="fas fa-cogs mr-2"></i> Commissioning Services
+                </button>
+            </div>
+
+            <!-- PEB Service Content -->
+            <div id="peb-service" class="service-content active">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover text-center">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-drafting-compass text-primary text-xl md:text-2xl"></i>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-lg mb-2">Design & Engineering</h3>
+                        <p class="text-steel text-sm">Complete structural and architectural design</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover text-center">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-industry text-primary text-xl md:text-2xl"></i>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-lg mb-2">Fabrication</h3>
+                        <p class="text-steel text-sm">Precision manufacturing in controlled environment</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover text-center">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-hard-hat text-primary text-xl md:text-2xl"></i>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-lg mb-2">Erection</h3>
+                        <p class="text-steel text-sm">Fast assembly with skilled installation teams</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover text-center">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-clipboard-check text-primary text-xl md:text-2xl"></i>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-lg mb-2">Turnkey Solutions</h3>
+                        <p class="text-steel text-sm">End-to-end project execution</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equipment Manufacturing Content -->
+            <div id="equipment-service" class="service-content">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="w-12 h-12 rounded-lg bg-industrial/10 flex items-center justify-center mb-4">
+                            <i class="fas fa-boxes text-industrial text-xl"></i>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-lg mb-3">Custom Equipment</h3>
+                        <p class="text-steel text-sm mb-4">Design and fabrication of custom industrial equipment as per client specifications</p>
+                        <ul class="space-y-1">
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-industrial mr-2"></i> Special purpose machines</li>
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-industrial mr-2"></i> Conveyor systems</li>
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-industrial mr-2"></i> Storage solutions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="w-12 h-12 rounded-lg bg-industrial/10 flex items-center justify-center mb-4">
+                            <i class="fas fa-tools text-industrial text-xl"></i>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-lg mb-3">Heavy Fabrication</h3>
+                        <p class="text-steel text-sm mb-4">Manufacturing of heavy industrial structures and components</p>
+                        <ul class="space-y-1">
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-industrial mr-2"></i> Pressure vessels</li>
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-industrial mr-2"></i> Reactors</li>
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-industrial mr-2"></i> Storage tanks</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="w-12 h-12 rounded-lg bg-industrial/10 flex items-center justify-center mb-4">
+                            <i class="fas fa-conveyor-belt text-industrial text-xl"></i>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-lg mb-3">Assembly Lines</h3>
+                        <p class="text-steel text-sm mb-4">Complete assembly line setup for manufacturing facilities</p>
+                        <ul class="space-y-1">
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-industrial mr-2"></i> Production lines</li>
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-industrial mr-2"></i> Material handling</li>
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-industrial mr-2"></i> Automation systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Commissioning Services Content -->
+            <div id="commissioning-service" class="service-content">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                            <i class="fas fa-plug text-primary text-xl"></i>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-lg mb-3">Installation</h3>
+                        <p class="text-steel text-sm mb-4">Professional installation of industrial equipment and systems</p>
+                        <ul class="space-y-1">
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-primary mr-2"></i> Mechanical installation</li>
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-primary mr-2"></i> Electrical wiring</li>
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-primary mr-2"></i> Piping systems</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                            <i class="fas fa-play-circle text-primary text-xl"></i>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-lg mb-3">Commissioning</h3>
+                        <p class="text-steel text-sm mb-4">Start-up and commissioning of complete industrial systems</p>
+                        <ul class="space-y-1">
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-primary mr-2"></i> System testing</li>
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-primary mr-2"></i> Performance validation</li>
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-primary mr-2"></i> Safety checks</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                            <i class="fas fa-user-graduate text-primary text-xl"></i>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-lg mb-3">Training</h3>
+                        <p class="text-steel text-sm mb-4">Comprehensive operator and maintenance training</p>
+                        <ul class="space-y-1">
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-primary mr-2"></i> Equipment operation</li>
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-primary mr-2"></i> Maintenance procedures</li>
+                            <li class="flex items-center text-sm"><i class="fas fa-check text-primary mr-2"></i> Safety protocols</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PEB Solutions Section -->
+    <section id="peb" class="py-12 md:py-16 lg:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="font-montserrat font-bold text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4">
+                    <span class="text-primary">Pre-Engineered Building</span> Solutions
+                </h2>
+                <div class="section-divider"></div>
+                <p class="text-base md:text-lg text-steel max-w-3xl mx-auto px-4">
                     Factory-fabricated components designed for rapid assembly on-site, offering superior strength, speed, and cost-efficiency.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <!-- Design -->
-                <div class="bg-white rounded-xl md:rounded-2xl p-6 card-hover shadow-lg">
+                <div class="bg-white rounded-xl p-6 card-hover shadow-lg">
                     <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 md:mb-6 shadow-lg">
                         <i class="fas fa-drafting-compass text-primary text-xl md:text-2xl"></i>
                     </div>
@@ -448,7 +731,7 @@
                 </div>
 
                 <!-- Fabrication -->
-                <div class="bg-white rounded-xl md:rounded-2xl p-6 card-hover shadow-lg">
+                <div class="bg-white rounded-xl p-6 card-hover shadow-lg">
                     <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 md:mb-6 shadow-lg">
                         <i class="fas fa-industry text-primary text-xl md:text-2xl"></i>
                     </div>
@@ -464,7 +747,7 @@
                 </div>
 
                 <!-- Erection -->
-                <div class="bg-white rounded-xl md:rounded-2xl p-6 card-hover shadow-lg">
+                <div class="bg-white rounded-xl p-6 card-hover shadow-lg">
                     <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 md:mb-6 shadow-lg">
                         <i class="fas fa-hard-hat text-primary text-xl md:text-2xl"></i>
                     </div>
@@ -482,166 +765,208 @@
         </div>
     </section>
 
-    <!-- Turnkey Solutions Section -->
-    <section id="turnkey" class="py-12 md:py-16 lg:py-24 bg-gradient-to-r from-primary/5 to-secondary/5">
+    <!-- Industrial Equipment & Manufacturing Section -->
+    <section id="industrial" class="industrial-bg py-12 md:py-16 lg:py-24">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 md:mb-16">
+            <div class="text-center mb-8 md:mb-12">
                 <h2 class="font-montserrat font-bold text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4">
-                    Complete <span class="text-primary">Turnkey Solutions</span>
+                    Industrial Equipment <span class="text-industrial">Manufacturing & Commissioning</span>
                 </h2>
-                <div class="section-divider"></div>
-                <p class="text-base md:text-lg text-steel max-w-3xl mx-auto">
-                    From concept to completion - single-point responsibility for your PEB project.
+                <div class="industrial-divider"></div>
+                <p class="text-base md:text-lg text-steel max-w-4xl mx-auto px-4">
+                    Complete design, fabrication, installation, and commissioning services for industrial equipment across various sectors
                 </p>
             </div>
 
-            <!-- Process Steps -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
-                <!-- Step 1 -->
-                <div class="relative pl-10 md:pl-12 bg-white p-4 md:p-6 rounded-xl shadow-md card-hover">
-                    <div class="absolute left-3 md:left-4 top-4 md:top-6 w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm md:text-base font-bold">
-                        1
+            <!-- Industrial Equipment Gallery -->
+            <div class="mb-12 md:mb-16">
+                <h3 class="font-montserrat font-bold text-xl md:text-2xl mb-6 text-center">Our Industrial Equipment Portfolio</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                    <!-- Reactors -->
+                    <div class="gallery-item rounded-lg overflow-hidden shadow-md cursor-pointer bg-white">
+                        <img src="industrial-images/12-chem_reactorsG.jpg" alt="Chemical Reactors" class="w-full h-48 object-cover">
+                        <div class="p-3">
+                            <h4 class="font-semibold text-sm md:text-base">Chemical Reactors</h4>
+                        </div>
                     </div>
-                    <h3 class="font-montserrat font-bold text-base md:text-lg mb-2">Consultation & Design</h3>
-                    <p class="text-steel text-xs md:text-sm">
-                        Understanding requirements with 3D visualization.
-                    </p>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="relative pl-10 md:pl-12 bg-white p-4 md:p-6 rounded-xl shadow-md card-hover">
-                    <div class="absolute left-3 md:left-4 top-4 md:top-6 w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm md:text-base font-bold">
-                        2
+                    
+                    <!-- Heat Exchangers -->
+                    <div class="gallery-item rounded-lg overflow-hidden shadow-md cursor-pointer bg-white">
+                        <img src="industrial-images/heat-exchanger.jpg" alt="Heat Exchangers" class="w-full h-48 object-cover">
+                        <div class="p-3">
+                            <h4 class="font-semibold text-sm md:text-base">Heat Exchangers</h4>
+                        </div>
                     </div>
-                    <h3 class="font-montserrat font-bold text-base md:text-lg mb-2">Engineering & Approval</h3>
-                    <p class="text-steel text-xs md:text-sm">
-                        Detailed engineering and necessary approvals.
-                    </p>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="relative pl-10 md:pl-12 bg-white p-4 md:p-6 rounded-xl shadow-md card-hover">
-                    <div class="absolute left-3 md:left-4 top-4 md:top-6 w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm md:text-base font-bold">
-                        3
+                    
+                    <!-- Pressure Vessels -->
+                    <div class="gallery-item rounded-lg overflow-hidden shadow-md cursor-pointer bg-white">
+                        <img src="industrial-images/pressure-vessel.jpg" alt="Pressure Vessels" class="w-full h-48 object-cover">
+                        <div class="p-3">
+                            <h4 class="font-semibold text-sm md:text-base">Pressure Vessels</h4>
+                        </div>
                     </div>
-                    <h3 class="font-montserrat font-bold text-base md:text-lg mb-2">Fabrication</h3>
-                    <p class="text-steel text-xs md:text-sm">
-                        Precision manufacturing in quality-controlled factory.
-                    </p>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="relative pl-10 md:pl-12 bg-white p-4 md:p-6 rounded-xl shadow-md card-hover">
-                    <div class="absolute left-3 md:left-4 top-4 md:top-6 w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm md:text-base font-bold">
-                        4
+                    
+                    <!-- Tubular Reactors -->
+                    <div class="gallery-item rounded-lg overflow-hidden shadow-md cursor-pointer bg-white">
+                        <img src="industrial-images/tubular%20reactors.avif" alt="Tubular Reactors" class="w-full h-48 object-cover">
+                        <div class="p-3">
+                            <h4 class="font-semibold text-sm md:text-base">Tubular Reactors</h4>
+                        </div>
                     </div>
-                    <h3 class="font-montserrat font-bold text-base md:text-lg mb-2">Erection & Handover</h3>
-                    <p class="text-steel text-xs md:text-sm">
-                        Rapid assembly and final quality handover.
-                    </p>
+                    
+                    <!-- Stainless Steel -->
+                    <div class="gallery-item rounded-lg overflow-hidden shadow-md cursor-pointer bg-white">
+                        <img src="industrial-images/Industrial-Stainless-Steel.avif" alt="Stainless Steel Equipment" class="w-full h-48 object-cover">
+                        <div class="p-3">
+                            <h4 class="font-semibold text-sm md:text-base">Stainless Steel</h4>
+                        </div>
+                    </div>
+                    
+                    <!-- Vacuum Systems -->
+                    <div class="gallery-item rounded-lg overflow-hidden shadow-md cursor-pointer bg-white">
+                        <img src="industrial-images/vaccume%20system.webp" alt="Vacuum Systems" class="w-full h-48 object-cover">
+                        <div class="p-3">
+                            <h4 class="font-semibold text-sm md:text-base">Vacuum Systems</h4>
+                        </div>
+                    </div>
+                    
+                    <!-- Drums to Reactor -->
+                    <div class="gallery-item rounded-lg overflow-hidden shadow-md cursor-pointer bg-white">
+                        <img src="industrial-images/drums-to-reactor.jpg" alt="Drums to Reactor" class="w-full h-48 object-cover">
+                        <div class="p-3">
+                            <h4 class="font-semibold text-sm md:text-base">Drums to Reactor</h4>
+                        </div>
+                    </div>
+                    
+                    <!-- Oil Heat Exchangers -->
+                    <div class="gallery-item rounded-lg overflow-hidden shadow-md cursor-pointer bg-white">
+                        <img src="industrial-images/oil%20heat%20exchangers.jpg" alt="Oil Heat Exchangers" class="w-full h-48 object-cover">
+                        <div class="p-3">
+                            <h4 class="font-semibold text-sm md:text-base">Oil Heat Exchangers</h4>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-
-            <section class="py-16 bg-gray-100">
-                <div class="container mx-auto px-4 text-center">
-                    <h2 class="font-montserrat font-bold text-3xl mb-4">
-                    Architectural & Interior Fabrication Partner
-                    </h2>
-
-                    <p class="text-steel max-w-3xl mx-auto mb-6">
-                    For stainless steel railings, glass work, ACP paneling, and custom
-                    architectural fabrication, our trusted partner
-                    <strong>Kashish Enterprises</strong> delivers premium craftsmanship
-                    for residential and commercial spaces.
-                    </p>
-
-                    <a href="https://kashishenterprises.in/" 
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-dark-blue transition">
-                       Visit Kashish Enterprises
-                     </a>
-
-                </div>
-                </section>
-
-
-            <!-- Turnkey Services -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <!-- Design Service -->
-                <div class="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg card-hover">
-                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-lg md:rounded-xl bg-primary/10 flex items-center justify-center mb-4 md:mb-6">
-                        <i class="fas fa-pencil-ruler text-primary text-xl md:text-2xl"></i>
+            <!-- Equipment Types -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
+                <!-- Process Equipment -->
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover equipment-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-industrial/10 flex items-center justify-center mr-4">
+                            <i class="fas fa-flask text-industrial text-xl"></i>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-lg">Process Equipment</h3>
                     </div>
-                    <h3 class="font-montserrat font-bold text-lg md:text-xl mb-3 md:mb-4">Design & Engineering</h3>
-                    <p class="text-steel mb-4 text-sm md:text-base">Complete architectural and structural design with BIM integration.</p>
-                    <ul class="space-y-2 text-steel">
-                        <li class="flex items-center text-sm md:text-base"><i class="fas fa-circle text-xs text-primary mr-2"></i> 3D Modeling</li>
-                        <li class="flex items-center text-sm md:text-base"><i class="fas fa-circle text-xs text-primary mr-2"></i> Structural Analysis</li>
-                        <li class="flex items-center text-sm md:text-base"><i class="fas fa-circle text-xs text-primary mr-2"></i> Approval Drawings</li>
+                    <p class="text-steel text-sm mb-4">Custom-designed process equipment for chemical, pharmaceutical, and food industries</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-sm"><i class="fas fa-cog text-industrial mr-2"></i> Reactors & Vessels</li>
+                        <li class="flex items-center text-sm"><i class="fas fa-cog text-industrial mr-2"></i> Heat Exchangers</li>
+                        <li class="flex items-center text-sm"><i class="fas fa-cog text-industrial mr-2"></i> Mixers & Blenders</li>
+                        <li class="flex items-center text-sm"><i class="fas fa-cog text-industrial mr-2"></i> Storage Tanks</li>
                     </ul>
                 </div>
 
-                <!-- Fabrication Service -->
-                <div class="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg card-hover">
-                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-lg md:rounded-xl bg-primary/10 flex items-center justify-center mb-4 md:mb-6">
-                        <i class="fas fa-industry text-primary text-xl md:text-2xl"></i>
+                <!-- Material Handling -->
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover equipment-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-industrial/10 flex items-center justify-center mr-4">
+                            <i class="fas fa-conveyor-belt text-industrial text-xl"></i>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-lg">Material Handling</h3>
                     </div>
-                    <h3 class="font-montserrat font-bold text-lg md:text-xl mb-3 md:mb-4">Fabrication</h3>
-                    <p class="text-steel mb-4 text-sm md:text-base">State-of-the-art fabrication with quality control at every stage.</p>
-                    <ul class="space-y-2 text-steel">
-                        <li class="flex items-center text-sm md:text-base"><i class="fas fa-circle text-xs text-primary mr-2"></i> CNC Cutting</li>
-                        <li class="flex items-center text-sm md:text-base"><i class="fas fa-circle text-xs text-primary mr-2"></i> Welding & Assembly</li>
-                        <li class="flex items-center text-sm md:text-base"><i class="fas fa-circle text-xs text-primary mr-2"></i> Surface Treatment</li>
+                    <p class="text-steel text-sm mb-4">Complete material handling systems for efficient logistics</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-sm"><i class="fas fa-cog text-industrial mr-2"></i> Conveyor Systems</li>
+                        <li class="flex items-center text-sm"><i class="fas fa-cog text-industrial mr-2"></i> Cranes & Hoists</li>
+                        <li class="flex items-center text-sm"><i class="fas fa-cog text-industrial mr-2"></i> Loading Systems</li>
+                        <li class="flex items-center text-sm"><i class="fas fa-cog text-industrial mr-2"></i> Automated Systems</li>
                     </ul>
                 </div>
 
-                <!-- Erection Service -->
-                <div class="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg card-hover">
-                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-lg md:rounded-xl bg-primary/10 flex items-center justify-center mb-4 md:mb-6">
-                        <i class="fas fa-tools text-primary text-xl md:text-2xl"></i>
+                <!-- Special Purpose Machines -->
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover equipment-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-industrial/10 flex items-center justify-center mr-4">
+                            <i class="fas fa-robot text-industrial text-xl"></i>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-lg">Special Machines</h3>
                     </div>
-                    <h3 class="font-montserrat font-bold text-lg md:text-xl mb-3 md:mb-4">Erection & Installation</h3>
-                    <p class="text-steel mb-4 text-sm md:text-base">Professional erection services by experienced teams.</p>
-                    <ul class="space-y-2 text-steel">
-                        <li class="flex items-center text-sm md:text-base"><i class="fas fa-circle text-xs text-primary mr-2"></i> Foundation Work</li>
-                        <li class="flex items-center text-sm md:text-base"><i class="fas fa-circle text-xs text-primary mr-2"></i> Structural Erection</li>
-                        <li class="flex items-center text-sm md:text-base"><i class="fas fa-circle text-xs text-primary mr-2"></i> Cladding & Finishing</li>
+                    <p class="text-steel text-sm mb-4">Custom-built machines for specific industrial processes</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-sm"><i class="fas fa-cog text-industrial mr-2"></i> Assembly Machines</li>
+                        <li class="flex items-center text-sm"><i class="fas fa-cog text-industrial mr-2"></i> Testing Equipment</li>
+                        <li class="flex items-center text-sm"><i class="fas fa-cog text-industrial mr-2"></i> Packaging Machines</li>
+                        <li class="flex items-center text-sm"><i class="fas fa-cog text-industrial mr-2"></i> Automation Cells</li>
                     </ul>
+                </div>
+            </div>
+
+            <!-- Manufacturing Process -->
+            <div class="bg-white rounded-xl p-6 md:p-8 shadow-xl mb-8 md:mb-12">
+                <h3 class="font-montserrat font-bold text-xl md:text-2xl mb-6 text-center">Our Manufacturing Process</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6">
+                    <div class="text-center p-4 rounded-lg bg-gray-50">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-industrial/10 flex items-center justify-center mx-auto mb-3">
+                            <span class="font-bold text-industrial">1</span>
+                        </div>
+                        <h4 class="font-semibold mb-2 text-sm md:text-base">Design & Engineering</h4>
+                        <p class="text-xs md:text-sm text-steel">Detailed CAD designs and engineering calculations</p>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-gray-50">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-industrial/10 flex items-center justify-center mx-auto mb-3">
+                            <span class="font-bold text-industrial">2</span>
+                        </div>
+                        <h4 class="font-semibold mb-2 text-sm md:text-base">Material Selection</h4>
+                        <p class="text-xs md:text-sm text-steel">Selection of appropriate materials as per specifications</p>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-gray-50">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-industrial/10 flex items-center justify-center mx-auto mb-3">
+                            <span class="font-bold text-industrial">3</span>
+                        </div>
+                        <h4 class="font-semibold mb-2 text-sm md:text-base">Fabrication</h4>
+                        <p class="text-xs md:text-sm text-steel">Precision fabrication using advanced machinery</p>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-gray-50">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-industrial/10 flex items-center justify-center mx-auto mb-3">
+                            <span class="font-bold text-industrial">4</span>
+                        </div>
+                        <h4 class="font-semibold mb-2 text-sm md:text-base">Quality Control</h4>
+                        <p class="text-xs md:text-sm text-steel">Rigorous testing and quality assurance</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Image Gallery Section -->
+    <!-- PEB Gallery Section -->
     <section id="gallery" class="py-12 md:py-16 lg:py-24 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 md:mb-16">
+            <div class="text-center mb-8 md:mb-12">
                 <h2 class="font-montserrat font-bold text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4">
-                    Our <span class="text-primary">Project Gallery</span>
+                    Our <span class="text-primary">PEB Project Gallery</span>
                 </h2>
                 <div class="section-divider"></div>
-                <p class="text-base md:text-lg text-steel max-w-3xl mx-auto">
+                <p class="text-base md:text-lg text-steel max-w-3xl mx-auto px-4">
                     Explore our completed Pre-Engineered Building projects across various industries
                 </p>
             </div>
 
             <!-- Gallery Navigation -->
-            <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-12">
-                <button class="gallery-filter px-4 py-2 rounded-lg bg-primary text-white font-medium" data-filter="all">
+            <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 overflow-x-auto pb-2">
+                <button class="gallery-filter px-4 py-2 rounded-lg bg-primary text-white font-medium text-sm md:text-base whitespace-nowrap" data-filter="all">
                     All Projects
                 </button>
-                <button class="gallery-filter px-4 py-2 rounded-lg bg-gray-100 text-steel font-medium hover:bg-primary hover:text-white transition" data-filter="structural">
+                <button class="gallery-filter px-4 py-2 rounded-lg bg-gray-100 text-steel font-medium hover:bg-primary hover:text-white transition text-sm md:text-base whitespace-nowrap" data-filter="structural">
                     Structural
                 </button>
-                <button class="gallery-filter px-4 py-2 rounded-lg bg-gray-100 text-steel font-medium hover:bg-primary hover:text-white transition" data-filter="layout">
+                <button class="gallery-filter px-4 py-2 rounded-lg bg-gray-100 text-steel font-medium hover:bg-primary hover:text-white transition text-sm md:text-base whitespace-nowrap" data-filter="layout">
                     Layouts
                 </button>
-                <button class="gallery-filter px-4 py-2 rounded-lg bg-gray-100 text-steel font-medium hover:bg-primary hover:text-white transition" data-filter="industrial">
+                <button class="gallery-filter px-4 py-2 rounded-lg bg-gray-100 text-steel font-medium hover:bg-primary hover:text-white transition text-sm md:text-base whitespace-nowrap" data-filter="industrial">
                     Industrial
                 </button>
-                <button class="gallery-filter px-4 py-2 rounded-lg bg-gray-100 text-steel font-medium hover:bg-primary hover:text-white transition" data-filter="inside">
+                <button class="gallery-filter px-4 py-2 rounded-lg bg-gray-100 text-steel font-medium hover:bg-primary hover:text-white transition text-sm md:text-base whitespace-nowrap" data-filter="inside">
                     Inside Views
                 </button>
             </div>
@@ -650,143 +975,102 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
                 <!-- Structural Images -->
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="structural">
-                    <img src="structure.jpeg" alt="PEB Structure" class="w-full h-64 object-cover">
+                    <img src="structure.jpeg" alt="PEB Structure" class="w-full h-48 md:h-64 object-cover">
                     <div class="p-4 bg-white">
-                        <h3 class="font-montserrat font-bold text-steel">Main Structure</h3>
-                        <p class="text-sm text-gray-600">PEB Framework</p>
+                        <h3 class="font-montserrat font-bold text-steel text-sm md:text-base">Main Structure</h3>
+                        <p class="text-xs md:text-sm text-gray-600">PEB Framework</p>
                     </div>
                 </div>
 
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="structural">
-                    <img src="structure2.jpeg" alt="Structure 2" class="w-full h-64 object-cover">
+                    <img src="structure2.jpeg" alt="Structure 2" class="w-full h-48 md:h-64 object-cover">
                     <div class="p-4 bg-white">
-                        <h3 class="font-montserrat font-bold text-steel">Structural Framework</h3>
-                        <p class="text-sm text-gray-600">Steel Structure</p>
+                        <h3 class="font-montserrat font-bold text-steel text-sm md:text-base">Structural Framework</h3>
+                        <p class="text-xs md:text-sm text-gray-600">Steel Structure</p>
                     </div>
                 </div>
 
                 <!-- Layout Images -->
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="layout">
-                    <img src="layout1.jpeg" alt="Layout Design 1" class="w-full h-64 object-cover">
+                    <img src="layout1.jpeg" alt="Layout Design 1" class="w-full h-48 md:h-64 object-cover">
                     <div class="p-4 bg-white">
-                        <h3 class="font-montserrat font-bold text-steel">Layout Design</h3>
-                        <p class="text-sm text-gray-600">Project Planning</p>
+                        <h3 class="font-montserrat font-bold text-steel text-sm md:text-base">Layout Design</h3>
+                        <p class="text-xs md:text-sm text-gray-600">Project Planning</p>
                     </div>
                 </div>
 
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="layout">
-                    <img src="layout2.jpeg" alt="Layout Design 2" class="w-full h-64 object-cover">
+                    <img src="layout2.jpeg" alt="Layout Design 2" class="w-full h-48 md:h-64 object-cover">
                     <div class="p-4 bg-white">
-                        <h3 class="font-montserrat font-bold text-steel">Architectural Layout</h3>
-                        <p class="text-sm text-gray-600">Design Blueprint</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="layout">
-                    <img src="Layout.jpeg" alt="Building Layout" class="w-full h-64 object-cover">
-                    <div class="p-4 bg-white">
-                        <h3 class="font-montserrat font-bold text-steel">Building Layout</h3>
-                        <p class="text-sm text-gray-600">Complete Plan</p>
-                    </div>
-                </div>
-
-                <!-- Drawings -->
-                <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="layout">
-                    <img src="drawing.jpeg" alt="Technical Drawing" class="w-full h-64 object-cover">
-                    <div class="p-4 bg-white">
-                        <h3 class="font-montserrat font-bold text-steel">Technical Drawing</h3>
-                        <p class="text-sm text-gray-600">Engineering Design</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="layout">
-                    <img src="drawingstructure.jpeg" alt="Structure Drawing" class="w-full h-64 object-cover">
-                    <div class="p-4 bg-white">
-                        <h3 class="font-montserrat font-bold text-steel">Structure Drawing</h3>
-                        <p class="text-sm text-gray-600">Detailed Plan</p>
+                        <h3 class="font-montserrat font-bold text-steel text-sm md:text-base">Architectural Layout</h3>
+                        <p class="text-xs md:text-sm text-gray-600">Design Blueprint</p>
                     </div>
                 </div>
 
                 <!-- Industrial Projects -->
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="industrial">
-                    <img src="multi-6.jpg" alt="Multi Building" class="w-full h-64 object-cover">
+                    <img src="multi-6.jpg" alt="Multi Building" class="w-full h-48 md:h-64 object-cover">
                     <div class="p-4 bg-white">
-                        <h3 class="font-montserrat font-bold text-steel">Multi Building Project</h3>
-                        <p class="text-sm text-gray-600">Industrial Complex</p>
+                        <h3 class="font-montserrat font-bold text-steel text-sm md:text-base">Multi Building Project</h3>
+                        <p class="text-xs md:text-sm text-gray-600">Industrial Complex</p>
                     </div>
                 </div>
 
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="industrial">
-                    <img src="peb-8.jpg" alt="PEB Building" class="w-full h-64 object-cover">
+                    <img src="peb-8.jpg" alt="PEB Building" class="w-full h-48 md:h-64 object-cover">
                     <div class="p-4 bg-white">
-                        <h3 class="font-montserrat font-bold text-steel">PEB Building</h3>
-                        <p class="text-sm text-gray-600">Completed Structure</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="industrial">
-                    <img src="pre-engineered-buildings-for-industrial-use-500x500.png" alt="Industrial PEB" class="w-full h-64 object-cover">
-                    <div class="p-4 bg-white">
-                        <h3 class="font-montserrat font-bold text-steel">Industrial PEB</h3>
-                        <p class="text-sm text-gray-600">Factory Building</p>
+                        <h3 class="font-montserrat font-bold text-steel text-sm md:text-base">PEB Building</h3>
+                        <p class="text-xs md:text-sm text-gray-600">Completed Structure</p>
                     </div>
                 </div>
 
                 <!-- Inside Views -->
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="inside">
-                    <img src="insideview.jpeg" alt="Inside View 1" class="w-full h-64 object-cover">
+                    <img src="insideview.jpeg" alt="Inside View 1" class="w-full h-48 md:h-64 object-cover">
                     <div class="p-4 bg-white">
-                        <h3 class="font-montserrat font-bold text-steel">Interior View 1</h3>
-                        <p class="text-sm text-gray-600">Building Interior</p>
+                        <h3 class="font-montserrat font-bold text-steel text-sm md:text-base">Interior View 1</h3>
+                        <p class="text-xs md:text-sm text-gray-600">Building Interior</p>
                     </div>
                 </div>
 
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="inside">
-                    <img src="insideview1.jpeg" alt="Inside View 2" class="w-full h-64 object-cover">
+                    <img src="insideview1.jpeg" alt="Inside View 2" class="w-full h-48 md:h-64 object-cover">
                     <div class="p-4 bg-white">
-                        <h3 class="font-montserrat font-bold text-steel">Interior View 2</h3>
-                        <p class="text-sm text-gray-600">Structural Interior</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="inside">
-                    <img src="insideview2.jpeg" alt="Inside View 3" class="w-full h-64 object-cover">
-                    <div class="p-4 bg-white">
-                        <h3 class="font-montserrat font-bold text-steel">Interior View 3</h3>
-                        <p class="text-sm text-gray-600">Completed Interior</p>
+                        <h3 class="font-montserrat font-bold text-steel text-sm md:text-base">Interior View 2</h3>
+                        <p class="text-xs md:text-sm text-gray-600">Structural Interior</p>
                     </div>
                 </div>
 
                 <!-- More Images -->
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="industrial">
-                    <img src="f1.jpeg" alt="Project 1" class="w-full h-64 object-cover">
+                    <img src="f1.jpeg" alt="Project 1" class="w-full h-48 md:h-64 object-cover">
                     <div class="p-4 bg-white">
-                        <h3 class="font-montserrat font-bold text-steel">Industrial Project 1</h3>
-                        <p class="text-sm text-gray-600">Fabrication Work</p>
+                        <h3 class="font-montserrat font-bold text-steel text-sm md:text-base">Industrial Project 1</h3>
+                        <p class="text-xs md:text-sm text-gray-600">Fabrication Work</p>
                     </div>
                 </div>
 
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="industrial">
-                    <img src="f2.jpeg" alt="Project 2" class="w-full h-64 object-cover">
+                    <img src="f2.jpeg" alt="Project 2" class="w-full h-48 md:h-64 object-cover">
                     <div class="p-4 bg-white">
-                        <h3 class="font-montserrat font-bold text-steel">Industrial Project 2</h3>
-                        <p class="text-sm text-gray-600">Steel Structure</p>
+                        <h3 class="font-montserrat font-bold text-steel text-sm md:text-base">Industrial Project 2</h3>
+                        <p class="text-xs md:text-sm text-gray-600">Steel Structure</p>
                     </div>
                 </div>
 
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="industrial">
-                    <img src="f3.jpeg" alt="Project 3" class="w-full h-64 object-cover">
+                    <img src="f3.jpeg" alt="Project 3" class="w-full h-48 md:h-64 object-cover">
                     <div class="p-4 bg-white">
-                        <h3 class="font-montserrat font-bold text-steel">Industrial Project 3</h3>
-                        <p class="text-sm text-gray-600">Construction Site</p>
+                        <h3 class="font-montserrat font-bold text-steel text-sm md:text-base">Industrial Project 3</h3>
+                        <p class="text-xs md:text-sm text-gray-600">Construction Site</p>
                     </div>
                 </div>
 
                 <div class="gallery-item rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="industrial">
-                    <img src="f4.jpeg" alt="Project 4" class="w-full h-64 object-cover">
+                    <img src="f4.jpeg" alt="Project 4" class="w-full h-48 md:h-64 object-cover">
                     <div class="p-4 bg-white">
-                        <h3 class="font-montserrat font-bold text-steel">Industrial Project 4</h3>
-                        <p class="text-sm text-gray-600">Completed Work</p>
+                        <h3 class="font-montserrat font-bold text-steel text-sm md:text-base">Industrial Project 4</h3>
+                        <p class="text-xs md:text-sm text-gray-600">Completed Work</p>
                     </div>
                 </div>
             </div>
@@ -794,28 +1078,28 @@
             <!-- More Images Row -->
             <div class="mt-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
                 <div class="gallery-item rounded-lg overflow-hidden shadow-md cursor-pointer" data-category="inside">
-                    <img src="insideview3.jpeg" alt="Inside View 4" class="w-full h-40 object-cover">
+                    <img src="insideview3.jpeg" alt="Inside View 4" class="w-full h-32 md:h-40 object-cover">
                 </div>
                 <div class="gallery-item rounded-lg overflow-hidden shadow-md cursor-pointer" data-category="inside">
-                    <img src="insideview4.jpeg" alt="Inside View 5" class="w-full h-40 object-cover">
+                    <img src="insideview4.jpeg" alt="Inside View 5" class="w-full h-32 md:h-40 object-cover">
                 </div>
                 <div class="gallery-item rounded-lg overflow-hidden shadow-md cursor-pointer" data-category="inside">
-                    <img src="insideview5.jpeg" alt="Inside View 6" class="w-full h-40 object-cover">
+                    <img src="insideview5.jpeg" alt="Inside View 6" class="w-full h-32 md:h-40 object-cover">
                 </div>
                 <div class="gallery-item rounded-lg overflow-hidden shadow-md cursor-pointer" data-category="inside">
-                    <img src="insideview6.jpeg" alt="Inside View 7" class="w-full h-40 object-cover">
+                    <img src="insideview6.jpeg" alt="Inside View 7" class="w-full h-32 md:h-40 object-cover">
                 </div>
                 <div class="gallery-item rounded-lg overflow-hidden shadow-md cursor-pointer" data-category="inside">
-                    <img src="insideview7.jpeg" alt="Inside View 8" class="w-full h-40 object-cover">
+                    <img src="insideview7.jpeg" alt="Inside View 8" class="w-full h-32 md:h-40 object-cover">
                 </div>
                 <div class="gallery-item rounded-lg overflow-hidden shadow-md cursor-pointer" data-category="inside">
-                    <img src="insideview8.jpeg" alt="Inside View 9" class="w-full h-40 object-cover">
+                    <img src="insideview8.jpeg" alt="Inside View 9" class="w-full h-32 md:h-40 object-cover">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Video Gallery Section -->
+    <!-- Video Gallery Section - ORIGINAL VERSION RESTORED -->
     <section id="videos" class="w-full bg-black py-12 md:py-16 px-4">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="font-montserrat font-bold text-2xl md:text-3xl lg:text-4xl text-white mb-6 md:mb-8">
@@ -896,7 +1180,7 @@
     <!-- Advantages Section -->
     <section id="advantages" class="py-12 md:py-16 lg:py-24 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 md:mb-16">
+            <div class="text-center mb-8 md:mb-12">
                 <h2 class="font-montserrat font-bold text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4">
                     Why Choose <span class="text-primary">PEB Over Conventional</span>?
                 </h2>
@@ -905,10 +1189,10 @@
 
             <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                 <!-- Comparison Table -->
-                <div class="bg-white rounded-xl md:rounded-2xl p-4 md:p-8 shadow-xl">
+                <div class="bg-white rounded-xl p-6 md:p-8 shadow-xl overflow-x-auto">
                     <h3 class="font-montserrat font-bold text-xl md:text-2xl mb-6 md:mb-8 text-center">Direct Comparison</h3>
-                    <div class="responsive-table">
-                        <table class="w-full min-w-full">
+                    <div class="min-w-full">
+                        <table class="w-full">
                             <thead>
                                 <tr class="bg-primary/10">
                                     <th class="p-3 md:p-4 text-left font-semibold text-sm md:text-base">Parameter</th>
@@ -999,58 +1283,81 @@
         </div>
     </section>
 
+    <!-- Kashish Enterprises Partner Section -->
+    <section class="py-12 md:py-16 bg-gradient-to-r from-primary/10 to-secondary/10">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="font-montserrat font-bold text-2xl md:text-3xl mb-4">
+                Architectural & Interior Fabrication Partner
+            </h2>
+
+            <p class="text-steel max-w-3xl mx-auto mb-6 text-base md:text-lg">
+                For stainless steel railings, glass work, ACP paneling, and custom
+                architectural fabrication, our trusted partner
+                <strong>Kashish Enterprises</strong> delivers premium craftsmanship
+                for residential and commercial spaces.
+            </p>
+
+            <a href="https://kashishenterprises.in/" 
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-dark-blue transition text-base md:text-lg">
+               Visit Kashish Enterprises
+            </a>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-12 md:py-16 lg:py-24 bg-gradient-to-r from-primary/5 to-secondary/5">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 md:mb-16">
+            <div class="text-center mb-8 md:mb-12">
                 <h2 class="font-montserrat font-bold text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4">
-                    Get Your <span class="text-primary">Free PEB Consultation</span>
+                    Get Your <span class="text-primary">Free Consultation</span>
                 </h2>
                 <div class="section-divider"></div>
-                <p class="text-base md:text-lg text-steel max-w-3xl mx-auto">
-                    Contact us today for a detailed quote and expert advice on your Pre-Engineered Building project
+                <p class="text-base md:text-lg text-steel max-w-3xl mx-auto px-4">
+                    Contact us today for a detailed quote and expert advice on your Pre-Engineered Building or Industrial Equipment project
                 </p>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-8 md:gap-12">
-                <!-- Contact Form -->
+                <!-- Contact Form with QR Code -->
                 <div class="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-xl">
-                    <h3 class="font-montserrat font-bold text-xl md:text-2xl mb-6">Send us a Message</h3>
+                    <h3 class="font-montserrat font-bold text-xl md:text-2xl mb-6 text-center">Contact Us</h3>
+                    
+                    <div class="qr-container">
+                        <div class="text-center mb-6">
+                            <h4 class="font-semibold text-lg mb-3">Scan QR Code for Quick Contact</h4>
+                            <p class="text-steel text-sm mb-4">Scan with your phone camera to open contact form</p>
+                            
+                            <!-- QR Code -->
+                            <div class="flex justify-center mb-6">
+                                <div class="p-4 bg-white rounded-xl shadow-lg inline-block">
+                                    <img 
+                                        src="contact-qr.png" 
+                                        alt="FABRICRAFT Contact QR Code"
+                                        class="w-48 h-48 md:w-64 md:h-64 object-contain"
+                                    >
+                                </div>
+                            </div>
+                            
+                            <p class="text-sm text-gray-600 mb-4">
+                                📱 Scan QR code with your phone camera
+                            </p>
+                        </div>
 
-                    <!-- QR Contact Section -->
-        <div class="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-xl text-center">
-            
-            <h3 class="font-montserrat font-bold text-xl md:text-2xl mb-4">
-                Scan to Contact Us
-            </h3>
-
-            <p class="text-steel mb-6 text-sm md:text-base">
-                Scan the QR code below to open our contact form and submit your project details.
-            </p>
-
-            <div class="flex justify-center mb-6">
-                <img 
-                    src="contact-qr.png" 
-                    alt="FABRICRAFT Contact QR Code"
-                    class="w-48 h-48 md:w-56 md:h-56 shadow-lg rounded-lg"
-                >
-            </div>
-
-            <p class="text-sm text-gray-600 mb-4">
-                📱 Best viewed on mobile after scanning
-            </p>
-
-            <!-- Optional Button for Desktop Users -->
-            <a 
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdf5FzWzLDv9PjovSmodOdDiZVZr4-9OfHg4CphnvZTGFrOgQ/viewform"
-            target="_blank"
-            class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-dark-blue transition"
-            >
-            Open Form in Browser
-           </a>
-
-           </div>
-
+                        <!-- Alternative Button -->
+                        <div class="text-center">
+                            <p class="text-steel mb-4 text-sm md:text-base">Or click the button below to open the contact form</p>
+                            <a 
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSdf5FzWzLDv9PjovSmodOdDiZVZr4-9OfHg4CphnvZTGFrOgQ/viewform"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-block bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-dark-blue transition text-base md:text-lg w-full"
+                            >
+                                <i class="fas fa-external-link-alt mr-2"></i>Open Contact Form
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Contact Information -->
@@ -1102,7 +1409,8 @@
                         <h3 class="font-montserrat font-bold text-xl md:text-2xl mb-6">Why Choose FABRICRAFT?</h3>
                         <ul class="space-y-2 md:space-y-3">
                             <li class="flex items-center gap-2 md:gap-3 text-sm md:text-base"><i class="fas fa-check-circle"></i> Complete Turnkey Solutions</li>
-                            <li class="flex items-center gap-2 md:gap-3 text-sm md:text-base"><i class="fas fa-check-circle"></i> 5+ Years of PEB Expertise</li>
+                            <li class="flex items-center gap-2 md:gap-3 text-sm md:text-base"><i class="fas fa-check-circle"></i> PEB + Industrial Equipment</li>
+                            <li class="flex items-center gap-2 md:gap-3 text-sm md:text-base"><i class="fas fa-check-circle"></i> 5+ Years of Expertise</li>
                             <li class="flex items-center gap-2 md:gap-3 text-sm md:text-base"><i class="fas fa-check-circle"></i> 50+ Successful Projects</li>
                             <li class="flex items-center gap-2 md:gap-3 text-sm md:text-base"><i class="fas fa-check-circle"></i> Quality Certified Manufacturing</li>
                             <li class="flex items-center gap-2 md:gap-3 text-sm md:text-base"><i class="fas fa-check-circle"></i> After-Sales Support</li>
@@ -1116,18 +1424,18 @@
     <!-- Footer -->
     <footer class="bg-dark-blue text-white py-8 md:py-12">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 <!-- Company Info -->
                 <div>
                     <div class="flex items-center space-x-2 md:space-x-3 mb-4 md:mb-6">
                         <img src="logo.png" alt="FABRICRAFT Logo" class="h-8 md:h-10 w-auto">
                         <div>
                             <h1 class="font-montserrat font-bold text-lg md:text-xl">FABRICRAFT</h1>
-                            <p class="text-xs text-gray-300">PEB SOLUTIONS</p>
+                            <p class="text-xs text-gray-300">PEB & INDUSTRIAL SOLUTIONS</p>
                         </div>
                     </div>
                     <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">
-                        Leading provider of Pre-Engineered Building turnkey solutions with expertise in structural fabrication across India.
+                        Leading provider of Pre-Engineered Building solutions & industrial equipment manufacturing, installation, and commissioning services across India.
                     </p>
                     <div class="flex gap-3 md:gap-4">
                         <a href="#" class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition">
@@ -1150,9 +1458,9 @@
                     <h4 class="font-montserrat font-bold text-base md:text-lg mb-4 md:mb-6">Quick Links</h4>
                     <ul class="space-y-2 md:space-y-3 text-gray-300 text-sm md:text-base">
                         <li><a href="#home" class="hover:text-white transition">Home</a></li>
-                        <li><a href="#about" class="hover:text-white transition">About PEB</a></li>
-                        <li><a href="#advantages" class="hover:text-white transition">Advantages</a></li>
-                        <li><a href="#turnkey" class="hover:text-white transition">Turnkey Solutions</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Our Services</a></li>
+                        <li><a href="#peb" class="hover:text-white transition">PEB Solutions</a></li>
+                        <li><a href="#industrial" class="hover:text-white transition">Industrial Equipment</a></li>
                         <li><a href="#gallery" class="hover:text-white transition">Gallery</a></li>
                         <li><a href="#videos" class="hover:text-white transition">Videos</a></li>
                     </ul>
@@ -1163,21 +1471,21 @@
                     <h4 class="font-montserrat font-bold text-base md:text-lg mb-4 md:mb-6">Our Services</h4>
                     <ul class="space-y-2 md:space-y-3 text-gray-300 text-sm md:text-base">
                         <li>PEB Structures</li>
-                        <li>Industrial Sheds</li>
+                        <li>Industrial Equipment</li>
+                        <li>Equipment Manufacturing</li>
+                        <li>Commissioning Services</li>
                         <li>Warehouse Construction</li>
-                        <li>Factory Buildings</li>
                         <li>Turnkey Solutions</li>
-                        <li>Structural Fabrication</li>
                     </ul>
                 </div>
 
                 <!-- Newsletter -->
                 <div>
                     <h4 class="font-montserrat font-bold text-base md:text-lg mb-4 md:mb-6">Stay Updated</h4>
-                    <p class="text-gray-300 mb-3 md:mb-4 text-sm md:text-base">Subscribe for PEB updates.</p>
+                    <p class="text-gray-300 mb-3 md:mb-4 text-sm md:text-base">Subscribe for industrial solutions updates.</p>
                     <div class="flex">
-                        <input type="email" placeholder="Your email" class="flex-1 px-3 md:px-4 py-2 md:py-3 rounded-l-lg bg-white/10 text-white outline-none placeholder-gray-400 text-sm md:text-base">
-                        <button class="bg-primary px-3 md:px-4 py-2 md:py-3 rounded-r-lg font-semibold hover:bg-blue-700 transition text-sm md:text-base">
+                        <input type="email" placeholder="Your email" class="flex-1 px-3 md:px-4 py-3 rounded-l-lg bg-white/10 text-white outline-none placeholder-gray-400 text-sm md:text-base">
+                        <button class="bg-primary px-3 md:px-4 py-3 rounded-r-lg font-semibold hover:bg-blue-700 transition text-sm md:text-base">
                             <i class="fas fa-paper-plane"></i>
                         </button>
                     </div>
@@ -1185,8 +1493,8 @@
             </div>
 
             <div class="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-white/10 text-center text-gray-400 text-sm md:text-base">
-                <p>&copy; <span id="currentYear"></span> FABRICRAFT PEB Solutions. All Rights Reserved.</p>
-                <p class="mt-2 text-xs md:text-sm">Pre-Engineered Building Specialists | Transforming Construction in India</p>
+                <p>&copy; <span id="currentYear"></span> FABRICRAFT PEB & Industrial Solutions. All Rights Reserved.</p>
+                <p class="mt-2 text-xs md:text-sm">Pre-Engineered Building Specialists | Industrial Equipment Manufacturers | Transforming Construction in India</p>
                 <!-- Developer Credit -->
                 <div class="mt-4 pt-4 border-t border-white/10">
                     <p class="text-xs md:text-sm">
@@ -1219,8 +1527,10 @@
             mobileMenu.classList.toggle('active');
             if (mobileMenu.classList.contains('active')) {
                 mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+                mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
             } else {
                 mobileMenu.style.maxHeight = '0';
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             }
         });
 
@@ -1229,6 +1539,7 @@
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
                 mobileMenu.style.maxHeight = '0';
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
 
@@ -1259,11 +1570,42 @@
                     // Close mobile menu if open
                     mobileMenu.classList.remove('active');
                     mobileMenu.style.maxHeight = '0';
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                     
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
+                }
+            });
+        });
+
+        // Service Tabs Functionality
+        const serviceTabs = document.querySelectorAll('.service-tab');
+        const serviceContents = document.querySelectorAll('.service-content');
+        
+        serviceTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                serviceTabs.forEach(t => {
+                    t.classList.remove('active', 'bg-primary', 'text-white');
+                    t.classList.add('bg-gray-200', 'text-steel');
+                });
+                
+                // Add active class to clicked tab
+                tab.classList.remove('bg-gray-200', 'text-steel');
+                tab.classList.add('active', 'bg-primary', 'text-white');
+                
+                // Hide all service contents
+                serviceContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show selected service content
+                const serviceType = tab.getAttribute('data-service');
+                const targetContent = document.getElementById(`${serviceType}-service`);
+                if (targetContent) {
+                    targetContent.classList.add('active');
                 }
             });
         });
@@ -1370,16 +1712,6 @@
             }
         });
 
-        // Contact form submission
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Thank you for your message! We will contact you within 24 hours.');
-                contactForm.reset();
-            });
-        }
-
         // Video auto-play handling for mobile
         document.querySelectorAll('video').forEach(video => {
             // Ensure videos have black background
@@ -1413,7 +1745,7 @@
 
         // Add animation to elements on scroll
         const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.card-hover, .gallery-item');
+            const elements = document.querySelectorAll('.card-hover, .gallery-item, .equipment-card');
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
                 const screenPosition = window.innerHeight / 1.3;
@@ -1426,7 +1758,7 @@
         };
 
         // Set initial state for animated elements
-        document.querySelectorAll('.card-hover, .gallery-item').forEach(el => {
+        document.querySelectorAll('.card-hover, .gallery-item, .equipment-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
@@ -1436,6 +1768,25 @@
         window.addEventListener('scroll', animateOnScroll);
         // Trigger once on load
         window.addEventListener('load', animateOnScroll);
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            // Close mobile menu on resize to desktop
+            if (window.innerWidth >= 1024) {
+                mobileMenu.classList.remove('active');
+                mobileMenu.style.maxHeight = '0';
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // Fix for iOS Safari 100vh issue
+        function setViewHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        setViewHeight();
+        window.addEventListener('resize', setViewHeight);
     </script>
 </body>
 </html>
